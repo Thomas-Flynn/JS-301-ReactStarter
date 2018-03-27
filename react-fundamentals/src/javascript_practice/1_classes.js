@@ -1,0 +1,42 @@
+console.log('Classes file');
+class User {
+    constructor(name) {
+        this.name = name;
+        this.type = "Trial User"
+    }
+    //Method 1
+    greet() {
+        console.log('Welcome back, ' + this.name);
+    }
+    //Method 2
+    status() {
+        console.log('Current status: ' + this.type);
+    }
+}
+//Instance of the class/new object
+var anonDude = new User ("Anonymous dude");
+
+//we can now use the instance and the . operator
+// to access the 2 methods
+anonDude.greet();
+anonDude.status();
+
+//Another instance of the class
+var jeff = new User("Anonymous lady");
+jeff.greet();
+jeff.status();
+
+//Another instance of the class
+var jeff = new User("Jeff");
+jeff.greet();
+jeff.status();
+
+//Instance 4
+var tom = new User("Tom");
+tom.greet();
+tom.status();
+
+//Instance 5
+murphy = new User("Murphy")
+murphy.greet();
+murphy.status();
