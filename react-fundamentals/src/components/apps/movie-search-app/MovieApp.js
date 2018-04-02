@@ -1,0 +1,20 @@
+import React, { Component } from 'react';
+import  { Form } from './Form';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+    background: #dbdbdb;
+`;
+
+export default class MovieApp extends Component {
+    render() {
+        return (
+            <Wrapper className="main">
+                <div className="mainDiv">
+                    <h1>Movie Search</h1>
+                    <Form />
+                </div>  
+            </Wrapper>
+        )
+    }
+}

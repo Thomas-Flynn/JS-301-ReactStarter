@@ -7,25 +7,21 @@ import {
 const FunctionalComponentDemo = function () {
     return (
         <Container className="main">
-            <Row>
-                <Col xs="12">
-                    <h1>Functional Component</h1>
-
-                    <p>Functional components allow you to render information to the web page without
-                having to use or change state.</p>
-                    <dl>
-                        <dt>Presentational </dt>
-                        <dd>Often used for simply rendering a small chunk of code to the dom.</dd>
-                        <dt>No 'this' keyword </dt>
-                        <dd>Unlike class components, functional ones don't use 'this'.</dd>
-                        <dt>No state</dt>
-                        <dd>These are 'dumb' components for UI.</dd>
-                        <dt>return()</dt>
-                        <dd>Must return a single element.</dd>
-                    </dl>
-                </Col>
-            </Row>
-
+            <div className="mainDiv">
+                <h1 className="section-title">Functional Component</h1>
+                <p>Functional components allow you to render information to the web page without
+                    having to use or change state.</p>
+                <dl>
+                    <dt>Presentational </dt>
+                    <dd>Often used for simply rendering a small chunk of code to the dom.</dd>
+                    <dt>No 'this' keyword </dt>
+                    <dd>Unlike class components, functional ones don't use 'this'.</dd>
+                    <dt>No state</dt>
+                    <dd>These are 'dumb' components for UI.</dd>
+                    <dt>return()</dt>
+                    <dd>Must return a single element.</dd>
+                </dl>
+            </div>
             <hr />
             <h1>Challenge</h1>
             <Row>
@@ -36,8 +32,8 @@ const FunctionalComponentDemo = function () {
                     <HelloWorld />
                 </Col>
             </Row>
-        </Container>
-    );
+        </Container >
+    )   
 };
 
 export default FunctionalComponentDemo;
@@ -46,7 +42,7 @@ const HelloWorld = function () {
     return (
         <div>
             <Card>
-            <img width="100%" height="280px" src="https://i.ytimg.com/vi/BwAakF_VUV8/maxresdefault.jpg" alt="Card cap" />
+                <img width="100%" height="280px" src="https://i.ytimg.com/vi/BwAakF_VUV8/maxresdefault.jpg" alt="Card cap" />
                 <CardBody>
                     <CardTitle>Regular Ole Function</CardTitle>
                     <CardSubtitle>A JS Library</CardSubtitle>

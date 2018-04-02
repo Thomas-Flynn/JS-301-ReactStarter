@@ -1,5 +1,4 @@
 // Source: https://jsbin.com/qonaga/edit?js,output
-
 import React from 'react';
 
 class JSXCompiler extends React.Component {
@@ -26,17 +25,19 @@ class JSXCompiler extends React.Component {
         }
     }
     render() {
-        <div>
-            <header className="compiler-header">{this.state.err}</header>
-            <div className="'compiler-container">
-                <pre>
-                    {this.state.output}
-                </pre>
-                <textarea
-                    onChange={this.update.bind(this)}
-                    defaultValue={this.state.input} />
+        return (
+            <div>
+                <header className="compiler-header">{this.state.err}</header>
+                <div className="'compiler-container">
+                    <pre>
+                        {this.state.output}
+                    </pre>
+                    <textarea
+                        onChange={this.update.bind(this)}
+                        defaultValue={this.state.input} />
+                </div>
             </div>
-        </div>
+        )
     }
 }
 

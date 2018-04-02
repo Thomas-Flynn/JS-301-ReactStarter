@@ -15,7 +15,7 @@ import React, { Component } from 'react';
               <NavbarBrand href="/">React Library</NavbarBrand>
                 <Nav className="ml-auto" navbar>
                   <NavItem>
-                    <NavLink href="https://github.com/yourhandle/yourrepoforthisapp">Github</NavLink>
+                    <NavLink href="https://github.com/Thomas-Flynn/JS-Fundamentals">Github</NavLink>
                   </NavItem>
                 </Nav>
             </Navbar>
