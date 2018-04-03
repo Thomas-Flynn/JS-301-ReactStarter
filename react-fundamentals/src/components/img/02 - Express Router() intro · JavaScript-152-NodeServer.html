@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<!-- saved from url=(0144)https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/02-routes-express.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        
+        <title>02 - Express Router() intro · JavaScript-152-NodeServer</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Eleven Fifty Academy">
+        
+        
+    
+    <link rel="stylesheet" href="./02 - Express Router() intro · JavaScript-152-NodeServer_files/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="./02 - Express Router() intro · JavaScript-152-NodeServer_files/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="./02 - Express Router() intro · JavaScript-152-NodeServer_files/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="./02 - Express Router() intro · JavaScript-152-NodeServer_files/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="./02 - Express Router() intro · JavaScript-152-NodeServer_files/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="./02 - Express Router() intro · JavaScript-152-NodeServer_files/website(1).css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="./02 - Express Router() intro · JavaScript-152-NodeServer_files/website(2).css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    <link rel="prev" href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/01-routes-intro.html"><link rel="next" href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/03-routes-solution.html"></head>
+    <body>
+        
+    
+<div class="book without-animation with-summary font-size-2 font-family-1 color-theme-1">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.gitbook.com/book/eleven-fifty-academy/javascript-152-nodeserver" target="_blank" class="custom-link">JavaScript-152-NodeServer</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter expanded" data-level="1.1" data-path="../../../">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2">
+            
+                <span>
+            
+                    
+                    js_library
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter expanded" data-level="1.2.1">
+            
+                <span>
+            
+                    
+                    05 - Express Server
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter expanded" data-level="1.2.1.1">
+            
+                <span>
+            
+                    
+                    00 - Intro 
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter expanded" data-level="1.2.1.1.1" data-path="../00-intro/01-purpose.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/00-intro/01-purpose.html">
+            
+                    
+                    01 - Purpose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2.1.1.2" data-path="../00-intro/02-set-up.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/00-intro/02-set-up.html">
+            
+                    
+                    02 - Back-End Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2.1.1.3" data-path="../00-intro/03-server-terms.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/00-intro/03-server-terms.html">
+            
+                    
+                    03 - Terms Cheat Sheet
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2.1.2">
+            
+                <span>
+            
+                    
+                    01 - Server Set up
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter expanded" data-level="1.2.1.2.1" data-path="../01-server-setup/01-server-dependencies.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/01-server-setup/01-server-dependencies.html">
+            
+                    
+                    01 - npm packages
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2.1.2.2" data-path="../01-server-setup/02-express-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/01-server-setup/02-express-intro.html">
+            
+                    
+                    02 - Express Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2.1.2.3" data-path="../01-server-setup/03-server-code.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/01-server-setup/03-server-code.html">
+            
+                    
+                    03 - Express code
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2.1.3">
+            
+                <span>
+            
+                    
+                    02 - Development Tools
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter expanded" data-level="1.2.1.3.1" data-path="../02-dev-tools/01-nodemon-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/02-dev-tools/01-nodemon-intro.html">
+            
+                    
+                    01 - Nodemon Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2.1.3.2" data-path="../02-dev-tools/02-postman-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/02-dev-tools/02-postman-intro.html">
+            
+                    
+                    02 - Postman Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2.1.3.3" data-path="../02-dev-tools/03-postman-practice.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/02-dev-tools/03-postman-practice.html">
+            
+                    
+                    03 - Postman set up
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2.1.4">
+            
+                <span>
+            
+                    
+                    03 - Routes Intro
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter expanded" data-level="1.2.1.4.1" data-path="01-routes-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/01-routes-intro.html">
+            
+                    
+                    01 - Routes intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active expanded" data-level="1.2.1.4.2" data-path="02-routes-express.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/02-routes-express.html">
+            
+                    
+                    02 - Express Router() intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2.1.4.3" data-path="03-routes-solution.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/03-routes-solution.html">
+            
+                    
+                    03 - Challenge 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter expanded" data-level="1.2.1.4.4" data-path="04-routes-solution-two.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/04-routes-solution-two.html">
+            
+                    
+                    04 - Challenge 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5">
+            
+                <span>
+            
+                    
+                    04 - Database Intro
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.5.1">
+            
+                <span>
+            
+                    
+                    00 - DB Intro and Set up
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.5.1.1" data-path="../04-db/00-db-intro/00-db-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/04-db/00-db-intro/00-db-intro.html">
+            
+                    
+                    00 - DB Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5.1.2" data-path="../04-db/00-db-intro/01-pg-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/04-db/00-db-intro/01-pg-intro.html">
+            
+                    
+                    01 - PostgreSQL Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5.1.3" data-path="../04-db/00-db-intro/02-pg-install.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/04-db/00-db-intro/02-pg-install.html">
+            
+                    
+                    02 - Install
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5.2">
+            
+                <span>
+            
+                    
+                    01 - Sequelize Intro
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.5.2.1" data-path="../04-db/01-sequelize/00-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/04-db/01-sequelize/00-intro.html">
+            
+                    
+                    01 - Sequelize intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5.2.2" data-path="../04-db/01-sequelize/01-sequelize.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/04-db/01-sequelize/01-sequelize.html">
+            
+                    
+                    02 - Initialize
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6">
+            
+                <span>
+            
+                    
+                    05 - Model View Controller
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.6.1">
+            
+                <span>
+            
+                    
+                    01 - MVC
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.6.1.1" data-path="../05-model-view-controller/01-mvc/00-mvc-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/05-model-view-controller/01-mvc/00-mvc-intro.html">
+            
+                    
+                    00 - MVC Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.2">
+            
+                <span>
+            
+                    
+                    02 - Models
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.6.2.1" data-path="../05-model-view-controller/02-models/00-models.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/05-model-view-controller/02-models/00-models.html">
+            
+                    
+                    01 - Intro to Models
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.2.2" data-path="../05-model-view-controller/02-models/01-test-models.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/05-model-view-controller/02-models/01-test-models.html">
+            
+                    
+                    02 - Test Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.3">
+            
+                <span>
+            
+                    
+                    03 - Controllers
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.6.3.1" data-path="../05-model-view-controller/03-controllers/00-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/05-model-view-controller/03-controllers/00-intro.html">
+            
+                    
+                    00 - Controllers Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.3.2" data-path="../05-model-view-controller/03-controllers/01-test-one.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/05-model-view-controller/03-controllers/01-test-one.html">
+            
+                    
+                    01 - Controller Set up
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.3.3" data-path="../05-model-view-controller/03-controllers/02-test-two.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/05-model-view-controller/03-controllers/02-test-two.html">
+            
+                    
+                    02 - Create Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.3.4" data-path="../05-model-view-controller/03-controllers/03-test-three.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/05-model-view-controller/03-controllers/03-test-three.html">
+            
+                    
+                    03 - req.body()
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.3.5" data-path="../05-model-view-controller/03-controllers/04-test-four.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/05-model-view-controller/03-controllers/04-test-four.html">
+            
+                    
+                    04 - Crafting the Response
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.3.6" data-path="../05-model-view-controller/03-controllers/05-test-five.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/05-model-view-controller/03-controllers/05-test-five.html">
+            
+                    
+                    05 - Sending the Response
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.3.7" data-path="../05-model-view-controller/03-controllers/06-test-six.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/05-model-view-controller/03-controllers/06-test-six.html">
+            
+                    
+                    06 - JSON Response
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.3.8" data-path="../05-model-view-controller/03-controllers/07-test-seven.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/05-model-view-controller/03-controllers/07-test-seven.html">
+            
+                    
+                    07 - Error Handling
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6.4" data-path="../05-model-view-controller/04-conclusion/01-conclusion.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/05-model-view-controller/04-conclusion/01-conclusion.html">
+            
+                    
+                    04 - Conclusion
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7">
+            
+                <span>
+            
+                    
+                    06 - Tokenization
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.7.1">
+            
+                <span>
+            
+                    
+                    01 - JWT Intro
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.7.1.1" data-path="../06-jwt/01-jwt-intro/01-jwt-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/06-jwt/01-jwt-intro/01-jwt-intro.html">
+            
+                    
+                    01 - JWT intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7.2">
+            
+                <span>
+            
+                    
+                    02 - User Create
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.7.2.1" data-path="../06-jwt/02-user-create/01-user-create.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/06-jwt/02-user-create/01-user-create.html">
+            
+                    
+                    01 - User Create
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7.2.2" data-path="../06-jwt/02-user-create/02-user-create.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/06-jwt/02-user-create/02-user-create.html">
+            
+                    
+                    02 - Refactor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7.3">
+            
+                <span>
+            
+                    
+                    03 - User Token
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.7.3.1" data-path="../06-jwt/03-user-token/01-jwt-package.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/06-jwt/03-user-token/01-jwt-package.html">
+            
+                    
+                    01 - JWT Package
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7.3.2" data-path="../06-jwt/03-user-token/02-adding-jwt.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/06-jwt/03-user-token/02-adding-jwt.html">
+            
+                    
+                    02 - Adding JWT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7.3.3" data-path="../06-jwt/03-user-token/03-process-env.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/06-jwt/03-user-token/03-process-env.html">
+            
+                    
+                    03 - ENV
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8">
+            
+                <span>
+            
+                    
+                    07 - Encryption
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.8.1" data-path="../07-encryption/00-bcrypt-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/07-encryption/00-bcrypt-intro.html">
+            
+                    
+                    01 - bcrypt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8.2" data-path="../07-encryption/01-bcrypt-setup.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/07-encryption/01-bcrypt-setup.html">
+            
+                    
+                    02 - bcrypt setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9">
+            
+                <span>
+            
+                    
+                    08 - Session
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.9.1" data-path="../08-session/00-session-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/08-session/00-session-intro.html">
+            
+                    
+                    00 - Session Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9.2" data-path="../08-session/01-signinmethod.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/08-session/01-signinmethod.html">
+            
+                    
+                    01 - Sign In Method
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9.3" data-path="../08-session/02-signin-bcrypt.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/08-session/02-signin-bcrypt.html">
+            
+                    
+                    02 - Sign In Bcrypt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9.4" data-path="../08-session/03-jwt.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/08-session/03-jwt.html">
+            
+                    
+                    03 - Sign In JWT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10">
+            
+                <span>
+            
+                    
+                    09 - Middleware
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.10.1" data-path="../09-middleware/01-test-client-html.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/09-middleware/01-test-client-html.html">
+            
+                    
+                    01 - Test Client HTML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10.2" data-path="../09-middleware/02-test-client-js.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/09-middleware/02-test-client-js.html">
+            
+                    
+                    02 - Test Client JS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10.3" data-path="../09-middleware/03-middleware-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/09-middleware/03-middleware-intro.html">
+            
+                    
+                    03 - Middleware intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10.4" data-path="../09-middleware/04-headers.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/09-middleware/04-headers.html">
+            
+                    
+                    04 - Headers intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10.5" data-path="../09-middleware/05-server-update.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/09-middleware/05-server-update.html">
+            
+                    
+                    05 - Server Update
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10.6" data-path="../09-middleware/06-test-client-postToOne.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/09-middleware/06-test-client-postToOne.html">
+            
+                    
+                    06 - Test Post
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10.7" data-path="../09-middleware/07-test-client-postToOneArrow.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/09-middleware/07-test-client-postToOneArrow.html">
+            
+                    
+                    07 - Test Post Refactor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10.8" data-path="../09-middleware/08-test-client-postData.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/09-middleware/08-test-client-postData.html">
+            
+                    
+                    08 - Post Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.10.9" data-path="../09-middleware/09-test-client-fetchFromOneDisplay.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/09-middleware/09-test-client-fetchFromOneDisplay.html">
+            
+                    
+                    09 - Fetch From One
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11">
+            
+                <span>
+            
+                    
+                    10 - Authenticated Routes
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.11.1" data-path="../10-authenticated-routes/01-auth-routes-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/10-authenticated-routes/01-auth-routes-intro.html">
+            
+                    
+                    01 - Intro to Authenticated Routes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11.2" data-path="../10-authenticated-routes/02-validate-session.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/10-authenticated-routes/02-validate-session.html">
+            
+                    
+                    02 - Validate Session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11.3" data-path="../10-authenticated-routes/03-appjs-changes.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/10-authenticated-routes/03-appjs-changes.html">
+            
+                    
+                    03 - Changes to app.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11.4" data-path="../10-authenticated-routes/04-authtestcontroller.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/10-authenticated-routes/04-authtestcontroller.html">
+            
+                    
+                    04 - authtestcontroller.js
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11.5" data-path="../10-authenticated-routes/05-delete-item.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/10-authenticated-routes/05-delete-item.html">
+            
+                    
+                    05 - Delete an Item
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11.6" data-path="../10-authenticated-routes/06-update-item.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/10-authenticated-routes/06-update-item.html">
+            
+                    
+                    06 - Update an Item
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.11.7" data-path="../10-authenticated-routes/07-postman.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/10-authenticated-routes/07-postman.html">
+            
+                    
+                    07 - Postman Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12">
+            
+                <span>
+            
+                    
+                    11 - Authenticated Requests
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.12.1" data-path="../11-authenticated-requests/00-html-add.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/11-authenticated-requests/00-html-add.html">
+            
+                    
+                    00 - Additions to index.html
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12.2" data-path="../11-authenticated-requests/01-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/11-authenticated-requests/01-intro.html">
+            
+                    
+                    01 - Anatomy of a Request
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12.3" data-path="../11-authenticated-requests/02-create-user.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/11-authenticated-requests/02-create-user.html">
+            
+                    
+                    02 - Create User
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12.4" data-path="../11-authenticated-requests/03-get-token.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/11-authenticated-requests/03-get-token.html">
+            
+                    
+                    03 - Getting a Token
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12.5" data-path="../11-authenticated-requests/04-authtestone.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/11-authenticated-requests/04-authtestone.html">
+            
+                    
+                    04 - Get Items From One User
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12.6" data-path="../11-authenticated-requests/05-authtest-create.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/11-authenticated-requests/05-authtest-create.html">
+            
+                    
+                    05 - Creating an Item for a User
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12.7" data-path="../11-authenticated-requests/06-get-single.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/11-authenticated-requests/06-get-single.html">
+            
+                    
+                    06 - Get one item
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12.8" data-path="../11-authenticated-requests/07-update-item.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/11-authenticated-requests/07-update-item.html">
+            
+                    
+                    07 - Update an Item
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12.9" data-path="../11-authenticated-requests/08-delete.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/11-authenticated-requests/08-delete.html">
+            
+                    
+                    08 - Deleting an Item
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.12.10" data-path="../11-authenticated-requests/09-delete-from-dom.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/11-authenticated-requests/09-delete-from-dom.html">
+            
+                    
+                    09 - Deleting with a Custom Event
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.13">
+            
+                <span>
+            
+                    
+                    12 - Workout Log Server
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.13.1" data-path="../12-workoutLog-challenge/00-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/12-workoutLog-challenge/00-intro.html">
+            
+                    
+                    00 - Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.14">
+            
+                <span>
+            
+                    
+                    13 - Migrations
+            
+                <i class="exc-trigger fa"></i></span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.14.1" data-path="../13-migrations/00-migrations-intro.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/13-migrations/00-migrations-intro.html">
+            
+                    
+                    00 - Intro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.14.2" data-path="../13-migrations/01-init-config.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/13-migrations/01-init-config.html">
+            
+                    
+                    01 - init and config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.14.3" data-path="../13-migrations/02-first-migration.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/13-migrations/02-first-migration.html">
+            
+                    
+                    02 - Creating the First Migration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.14.4" data-path="../13-migrations/03-running-migrations.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/13-migrations/03-running-migrations.html">
+            
+                    
+                    03 - Running Migrations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.14.5" data-path="../13-migrations/04-reverting.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/13-migrations/04-reverting.html">
+            
+                    
+                    04 - Reverting Migrations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.14.6" data-path="../13-migrations/05-seeds.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/13-migrations/05-seeds.html">
+            
+                    
+                    05 - Seeds
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.14.7" data-path="../13-migrations/06-reverting-seeds.html">
+            
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/13-migrations/06-reverting-seeds.html">
+            
+                    
+                    06 - Reverting Seeds
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com/" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <a class="btn pull-left js-toolbar-action" aria-label="" href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/02-routes-express.html#"><i class="fa fa-align-justify"></i></a><div class="dropdown pull-right js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Share" href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/02-routes-express.html#"><i class="fa fa-share-alt"></i></a><div class="dropdown-menu dropdown-left"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-5 ">Facebook</button><button class="button size-5 ">Google+</button><button class="button size-5 ">Twitter</button><button class="button size-5 ">Weibo</button><button class="button size-5 ">Instapaper</button></div></div></div><a class="btn pull-right js-toolbar-action" aria-label="" href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/02-routes-express.html#"><i class="fa fa-facebook"></i></a><a class="btn pull-right js-toolbar-action" aria-label="" href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/02-routes-express.html#"><i class="fa fa-twitter"></i></a><div class="dropdown pull-left font-settings js-toolbar-action"><a class="btn toggle-dropdown" aria-label="Font Settings" href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/02-routes-express.html#"><i class="fa fa-font"></i></a><div class="dropdown-menu dropdown-right"><div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div><div class="buttons"><button class="button size-2 font-reduce">A</button><button class="button size-2 font-enlarge">A</button></div><div class="buttons"><button class="button size-2 ">Serif</button><button class="button size-2 ">Sans</button></div><div class="buttons"><button class="button size-3 ">White</button><button class="button size-3 ">Sepia</button><button class="button size-3 ">Night</button></div></div></div><h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/">02 - Express Router() intro</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="express-router">EXPRESS ROUTER()</h1>
+<hr>
+<p class="comments-section">In this module, we'll create a few Express routes. Because an application can have dozens upon dozens of routes, the purpose of this is to help learn to create and organize our routes properly.<div class="comments-icon"><div class="marker">+</div></div></p>
+<hr>
+
+<h3 id="file-set-up">File Set up</h3>
+<p class="comments-section">Let's start by adding a <code>controllers</code> folder and a <code>testcontroller.js</code> file. We'll explain what controllers are later, but for now, add these two things:<div class="comments-icon"><div class="marker">+</div></div></p>
+<pre><code>javascript-library
+    └── 7-Express Server
+        └── Server
+            └── controllers
+                └── testcontroller.js
+            └── app.js
+</code></pre><hr>
+
+<h3 id="testcontrollerjs">testcontroller.js</h3>
+<ol>
+<li>Go into the <code>testcontroller.js</code> file.</li>
+<li>Add the following imports along with the <code>router.get()</code> function. Numbers are included for upcoming analysis:</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>); <span class="hljs-comment">//1</span>
+<span class="hljs-keyword">var</span> router = express.Router();  <span class="hljs-comment">//2</span>
+
+<span class="hljs-comment">//3    //4   //5          //6</span>
+router.get(<span class="hljs-string">'/'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+    <span class="hljs-comment">//7</span>
+  res.send(<span class="hljs-string">'Hey!!! This is a test route!'</span>);
+});
+
+<span class="hljs-comment">//8</span>
+<span class="hljs-built_in">module</span>.exports = router;
+</code></pre>
+<h3 id="analysis">Analysis</h3>
+<p class="comments-section">Let's take a look at what this code is doing. It's somewhat of a repeat of what we did in the last module:<div class="comments-icon"><div class="marker">+</div></div></p>
+<ol>
+<li>We import the Express framework and it inside the variable <code>express</code>. This instance becomes our gateway to using Express methods.</li>
+<li>We create a new variable called <code>router</code>. Since the <code>express</code> variable(line 1) gives us access into the express framework, we can access express properties and methods by calling <code>express</code> + <code>.</code>. Therefore, when we call <code>express.Router()</code>, we are using the <code>express</code> variable to access the <code>Router()</code> method. <br>
+The <code>Router()</code> method will return a <code>router</code> object for us. You can read about it more at the Express <a href="https://expressjs.com/en/4x/api.html#router" target="_blank">docs</a>. </li>
+<li>We use the <code>router</code> object by using the <code>router</code> variable to get access into the <code>Router()</code> object methods. </li>
+<li><code>get()</code> is one of the methods in the object, and we call it here. This method allows us to complete an HTTP GET request. We pass two arguments into the <code>.get</code> method.</li>
+<li>The first argument is the path. In this case, the path is just a <code>/</code>. More on this later.</li>
+<li>The second argument is a callback function. This is also sometimes called a “handler function”. This function gets called when the application receives a request to the specified route and HTTP method. The application “listens” for requests that match the specified route(s) and method(s), and when it detects a match, it calls the specified callback function.</li>
+<li>Inside our callback function, we call <code>res.send()</code>. <code>send()</code> is an express method that can be called on the <code>res</code> or response object. Our response parameter is just a simple string. </li>
+<li>We export the module for usage outside of the file.</li>
+</ol>
+<hr>
+
+<h3 id="appjs">app.js</h3>
+<p class="comments-section">Before this will work, we have to add routes into <code>app.js</code>. <div class="comments-icon"><div class="marker">+</div></div></p>
+<ol>
+<li>Go to <code>app.js</code>.</li>
+<li>Add the following code:</li>
+</ol>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">var</span> app = express();
+<span class="hljs-keyword">var</span> test = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./controllers/testcontroller'</span>)<span class="hljs-comment">//1</span>
+
+            <span class="hljs-comment">//2            //3</span>
+app.use(<span class="hljs-string">'/test'</span>, test)
+</code></pre>
+<h3 id="analysis">Analysis</h3>
+<ol>
+<li>We import the route object that we just created and store it in a variable called <code>test</code>.</li>
+<li>We call <code>app.use</code> and in the first parameter create a base url called <code>/test</code>. So our base url will look like this:
+<code>http://localhost:3000/test</code></li>
+<li>For our second parameter for the <code>use()</code> function, we pass in <code>test</code>. This means that all routes created in the <code>testcontroller.js</code> file will be sub-routes. It will look like this:
+<code>http://localhost:3000/test</code> or <code>http://localhost:3000/test/</code></li>
+</ol>
+<hr>
+
+<h3 id="test">Test</h3>
+<p class="comments-section">Let's test this now to get a better understanding.<div class="comments-icon"><div class="marker">+</div></div></p>
+<ol>
+<li>Run the application using <code>nodemon app.js</code>.</li>
+<li>Open Postman.</li>
+<li>In the url link, add the following route into the Request URL bar:
+<code>http://localhost:3000/test/</code></li>
+<li>Make sure that you have the request set to a GET request and press SEND. When you send, you should get a response like this:
+<img src="./02 - Express Router() intro · JavaScript-152-NodeServer_files/01-testroute.PNG" alt="screenshot"></li>
+</ol>
+<hr>
+
+<h3 id="challenge-1">Challenge #1</h3>
+<p class="comments-section">We could talk all day about this, but it won't make sense until you play around. Try the following:<div class="comments-icon"><div class="marker">+</div></div></p>
+<ol>
+<li><p class="comments-section">Create a route that is the following url:
+<code>http://localhost:3000/test/about</code><div class="comments-icon"><div class="marker">+</div></div></p>
+</li>
+<li><p class="comments-section">When you test the app in Postman, you should get a response like this:
+<img src="./02 - Express Router() intro · JavaScript-152-NodeServer_files/02-testroute-about.PNG" alt="screenshot"><div class="comments-icon"><div class="marker">+</div></div></p>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/01-routes-intro.html" class="navigation navigation-prev " aria-label="Previous page: 01 - Routes intro">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="https://eleven-fifty-academy.gitbooks.io/javascript-152-nodeserver/content/javascript_library/06-Express-Server/03-routes/03-routes-solution.html" class="navigation navigation-next " aria-label="Next page: 03 - Challenge 1" style="margin-right: 0px;">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"02 - Express Router() intro","level":"1.2.1.4.2","depth":4,"next":{"title":"03 - Challenge 1","level":"1.2.1.4.3","depth":4,"path":"javascript_library/06-Express-Server/03-routes/03-routes-solution.md","ref":"javascript_library/06-Express-Server/03-routes/03-routes-solution.md","articles":[]},"previous":{"title":"01 - Routes intro","level":"1.2.1.4.1","depth":4,"path":"javascript_library/06-Express-Server/03-routes/01-routes-intro.md","ref":"javascript_library/06-Express-Server/03-routes/01-routes-intro.md","articles":[]},"dir":"ltr"},"config":{"plugins":["my-theme","expandable-chapters","youtube","comment"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"youtube":{},"search":{},"my-theme":{"myConfigKey":"it's the default value","font-family":"sans"},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"comment":{"highlightCommented":true}},"github":"ElevenfiftyAcademy/JavaScript-152-NodeServer","theme":"default","author":"Eleven Fifty Academy","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"JavaScript-152-NodeServer","language":"en","links":{"sidebar":{"JavaScript-152-NodeServer":"https://www.gitbook.com/book/eleven-fifty-academy/javascript-152-nodeserver"},"gitbook":true},"gitbook":"*","description":""},"file":{"path":"javascript_library/06-Express-Server/03-routes/02-routes-express.md","mtime":"2018-03-30T14:55:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-30T14:57:17.267Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+    <link href="./02 - Express Router() intro · JavaScript-152-NodeServer_files/css" rel="stylesheet">
+    <div style="width: 100%; float: right; text-align: center; font-size: 10px; padding-top: 2px; border-top: 1.5px solid #f7f7f7;">
+         © 2018 All rights reserved Eleven Fifty Academy, Inc. Proprietary and confidential. 
+      </div>
+
+        
+    <script src="./02 - Express Router() intro · JavaScript-152-NodeServer_files/gitbook.js"></script>
+    <script src="./02 - Express Router() intro · JavaScript-152-NodeServer_files/theme.js"></script>
+    
+        
+        <script src="./02 - Express Router() intro · JavaScript-152-NodeServer_files/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="./02 - Express Router() intro · JavaScript-152-NodeServer_files/plugin.js"></script>
+        
+    
+        
+        <script src="./02 - Express Router() intro · JavaScript-152-NodeServer_files/search-engine.js"></script>
+        
+    
+        
+        <script src="./02 - Express Router() intro · JavaScript-152-NodeServer_files/search.js"></script>
+        
+    
+        
+        <script src="./02 - Express Router() intro · JavaScript-152-NodeServer_files/lunr.min.js"></script>
+        
+    
+        
+        <script src="./02 - Express Router() intro · JavaScript-152-NodeServer_files/search-lunr.js"></script>
+        
+    
+        
+        <script src="./02 - Express Router() intro · JavaScript-152-NodeServer_files/buttons.js"></script>
+        
+    
+        
+        <script src="./02 - Express Router() intro · JavaScript-152-NodeServer_files/fontsettings.js"></script>
+        
+    
+
+    
+
+
+</body></html>
