@@ -34,7 +34,7 @@ router.post('/createuser', function (req, res) {
 
 router.post('/signin', function(req, res) {
 
-    User.findOne( { where: { username: req.body.user.username } } ).then(
+    User.findOne({where: {username: req.body.user.username}}).then(
         function(user) {
             if (user) {
                 bcrypt.compare(req.body.user.password, user.passwordhash, function(err, matches){
