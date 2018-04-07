@@ -7,6 +7,8 @@ import ClassComponentDemo from '../ClassComponentDemo';
 import LifeCycles from '../LifeCycles';
 import TimePiecesApp from '../apps/TimePiecesApp';
 import NytApp from '../apps/nyt-app/NytApp';
+import FriendListApp from '../apps/FriendListApp/FriendListApp';
+import GoogleApp from '../apps/google-api-app/GoogleApp';
 import ReactConceptsApp from '../apps/concept-list-app/ReactConceptsApp';
 import MovieSearchApp from '../apps/movie-search-app/MovieApp';
 import YouTubeSearchApp from '../apps/YouTubeApi/Video';
@@ -58,6 +60,11 @@ export const routes = [
       main: () => < NytApp />
     },
     {
+      path: '/friendlist',
+      exact: true,
+      main: () => < FriendListApp />
+    },
+    {
       path: '/reactconceptslist',
       exact: true,
       main: () => <ReactConceptsApp />
@@ -81,6 +88,11 @@ export const routes = [
       path: '/bitcoinapp',
       exact: true,
       main: () => <BitcoinApp />
+    },
+    {
+      path: '/googleapp',
+      exact: true,
+      main: () => < GoogleApp />
     },
     {
       path: '/resources',

@@ -10,6 +10,7 @@
     "axios": "^0.17.1",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.0.0",
+    "google-maps-api": "^2.0.1",
     "lodash": "^4.17.4",
     "moment": "^2.22.0",
     "node-sass-chokidar": "0.0.3",
